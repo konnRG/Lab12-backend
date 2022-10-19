@@ -26,5 +26,15 @@ public class OrganizerDaoImpl implements OrganizerDao {
 
     }
 
+    @Override
+    public Organizer getOrganizer(Long id) {
+        return organizerRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Organizer save(Organizer organizer) {
+        return organizerRepository.save(organizer);
+    }
+
 }
 

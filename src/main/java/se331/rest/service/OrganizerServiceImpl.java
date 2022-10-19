@@ -18,10 +18,19 @@ public class OrganizerServiceImpl implements OrganizerService{
     public List<Organizer> getAllOrganizer() {
                return organizerDao.getOrganizer(Pageable.unpaged()).getContent();
            }
-
            @Override
     public Page<Organizer> getOrganizer(Integer page, Integer pageSize) {
               return organizerDao.getOrganizer(PageRequest.of(page,pageSize));
-          }
+    }
+
+    @Override
+    public Organizer getOrganizer(Long id) {
+        return organizerDao.getOrganizer(id);
+    }
+
+    @Override
+    public Organizer save(Organizer organizer) {
+        return organizerDao.save(organizer);
+    }
 }
 
